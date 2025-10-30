@@ -5,6 +5,7 @@
     --borders:hsl(268, 68%, 62%);
     --borders-shadow:rgba(129, 78, 187, 0.442);
     --text:hsl(236, 48%, 53%);
+    --textinf:hsl(236, 48%, 62%);
     --text1-shadow:#33387d81;
     --palette1:#D78FEE;
     --buybutt:hsl(45, 100%, 71%);
@@ -164,7 +165,7 @@ button{
 
 .item-desc{
     font-size: 14px;
-    color: var(--text);
+    color: var(--textinf);
     margin: 4px;
 }
 
