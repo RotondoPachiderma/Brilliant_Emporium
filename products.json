@@ -5,7 +5,7 @@
     "rarita": "comune",
     "ripetibile": true,
     "immagine": "🤥",
-    "categoria": ["interazione", "digitale", "ripetibile"]
+    "categoria": ["verbale", "ripetibile"]
   },
   "sticker_halloween": {
     "costo": 100,
@@ -13,7 +13,7 @@
     "rarita": "epico",
     "ripetibile": false,
     "immagine": "👗",
-    "categoria": ["digitale", "sticker", "stagionale", "collezionabile"]
+    "categoria": ["media", "collezionabile"]
   },
   "foto_capelli_rosa": {
     "costo": 25,
@@ -21,7 +21,7 @@
     "rarita": "raro",
     "ripetibile": false,
     "immagine": "🌈",
-    "categoria": ["media", "foto", "personale", "contenuto"]
+    "categoria": ["media", "collezionabile"]
   },
   "gif_capelli_lunghi": {
     "costo": 40,
@@ -29,7 +29,7 @@
     "rarita": "raro",
     "ripetibile": false,
     "immagine": "👩",
-    "categoria": ["media", "gif", "personale", "contenuto"]
+    "categoria": ["media", "collezionabile"]
   },
   "complimento_sincero": {
     "costo": 15,
@@ -37,7 +37,7 @@
     "rarita": "comune",
     "ripetibile": true,
     "immagine": "❤️",
-    "categoria": ["interazione", "verbale", "ripetibile"]
+    "categoria": ["verbale", "ripetibile"]
   },
   "set_lucine": {
     "costo": 190,
@@ -45,7 +45,7 @@
     "rarita": "epico",
     "ripetibile": false,
     "immagine": "✨",
-    "categoria": ["fisico", "regalo", "decorazione", "artigianale"]
+    "categoria": ["regalo"]
   },
   "oggetto_personalizzato": {
     "costo": 100,
@@ -53,6 +53,6 @@
     "rarita": "epico",
     "ripetibile": false,
     "immagine": "🛠️",
-    "categoria": ["fisico", "personalizzato", "regalo", "artigianale"]
+    "categoria": ["regalo"]
   }
 }
