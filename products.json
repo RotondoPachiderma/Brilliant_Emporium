@@ -4,7 +4,7 @@
     "descrizione": "risposta sincera ed esaustiva ad una qualsiasi domanda",
     "rarita": "comune",
     "ripetibile": true,
-    "immagine": "&#x1F925",
+    "immagine": "🤥",
     "categoria": ["interazione", "digitale", "ripetibile"]
   },
   "sticker_halloween": {
@@ -12,7 +12,7 @@
     "descrizione": "sticker incredibile di un mio costume di Halloween",
     "rarita": "epico",
     "ripetibile": false,
-    "immagine": "&#128087",
+    "immagine": "👗",
     "categoria": ["digitale", "sticker", "stagionale", "collezionabile"]
   },
   "foto_capelli_rosa": {
@@ -20,7 +20,7 @@
     "descrizione": "foto di me con i capelli rosa",
     "rarita": "raro",
     "ripetibile": false,
-    "immagine": "&#127752",
+    "immagine": "🌈",
     "categoria": ["media", "foto", "personale", "contenuto"]
   },
   "gif_capelli_lunghi": {
@@ -28,7 +28,7 @@
     "descrizione": "gif di me con i capelli lunghi",
     "rarita": "raro",
     "ripetibile": false,
-    "immagine": "&#128105",
+    "immagine": "👩",
     "categoria": ["media", "gif", "personale", "contenuto"]
   },
   "complimento_sincero": {
@@ -36,7 +36,7 @@
     "descrizione": "ti faccio un complimento sincero e non scherzoso",
     "rarita": "comune",
     "ripetibile": true,
-    "immagine": "&#x2764",
+    "immagine": "❤️",
     "categoria": ["interazione", "verbale", "ripetibile"]
   },
   "set_lucine": {
@@ -44,7 +44,7 @@
     "descrizione": "ti regalo un set di lucine particolari",
     "rarita": "epico",
     "ripetibile": false,
-    "immagine": "&#x2728",
+    "immagine": "✨",
     "categoria": ["fisico", "regalo", "decorazione", "artigianale"]
   },
   "oggetto_personalizzato": {
@@ -52,7 +52,7 @@
     "descrizione": "oggetto personalizzato fatto a mano da me",
     "rarita": "epico",
     "ripetibile": false,
-    "immagine": "&#128736",
+    "immagine": "🛠️",
     "categoria": ["fisico", "personalizzato", "regalo", "artigianale"]
   }
 }
