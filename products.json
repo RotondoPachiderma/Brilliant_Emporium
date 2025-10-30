@@ -1,5 +1,5 @@
 {
-  "verita": {
+  "Verità": {
     "costo": 10,
     "descrizione": "risposta sincera ed esaustiva ad una qualsiasi domanda",
     "rarita": "comune",
@@ -7,7 +7,7 @@
     "immagine": "🤥",
     "categoria": ["verbale", "ripetibile"]
   },
-  "sticker_halloween": {
+  "Sticker incredibile": {
     "costo": 100,
     "descrizione": "sticker incredibile di un mio costume di Halloween",
     "rarita": "epico",
@@ -15,7 +15,7 @@
     "immagine": "👗",
     "categoria": ["media", "collezionabile"]
   },
-  "foto_capelli_rosa": {
+  "Non per vantarmi": {
     "costo": 25,
     "descrizione": "foto di me con i capelli rosa",
     "rarita": "raro",
@@ -23,7 +23,7 @@
     "immagine": "🌈",
     "categoria": ["media", "collezionabile"]
   },
-  "gif_capelli_lunghi": {
+  "Metallaro": {
     "costo": 40,
     "descrizione": "gif di me con i capelli lunghi",
     "rarita": "raro",
@@ -31,7 +31,7 @@
     "immagine": "👩",
     "categoria": ["media", "collezionabile"]
   },
-  "complimento_sincero": {
+  "Complimento sincero": {
     "costo": 15,
     "descrizione": "ti faccio un complimento sincero e non scherzoso",
     "rarita": "comune",
@@ -39,7 +39,7 @@
     "immagine": "❤️",
     "categoria": ["verbale", "ripetibile"]
   },
-  "set_lucine": {
+  "Set Lucine": {
     "costo": 190,
     "descrizione": "ti regalo un set di lucine particolari",
     "rarita": "epico",
@@ -47,7 +47,7 @@
     "immagine": "✨",
     "categoria": ["regalo"]
   },
-  "oggetto_personalizzato": {
+  "Oggetto personalizzato": {
     "costo": 100,
     "descrizione": "oggetto personalizzato fatto a mano da me",
     "rarita": "epico",
