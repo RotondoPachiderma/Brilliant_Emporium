@@ -1,7 +1,7 @@
 :root{
 
-    --sitebg:hsl(304, 92%, 90%);
-    --bg:hsl(304, 92%, 94%);
+    --sitebg:hsl(304, 92%, 87%);
+    --bg:hsl(304, 92%, 90%);
     --borders:hsl(268, 68%, 62%);
     --borders-shadow:rgba(129, 78, 187, 0.442);
     --text:hsl(236, 48%, 53%);
@@ -15,6 +15,10 @@ body{
     background-color: var(--sitebg);
     padding-bottom: 1000px;
     font-family: "Press Start 2P";
+}
+
+.header, .catalogo-wrapper, .points-display, .filters{
+    background-color: var(--bg);
 }
 
 button{
