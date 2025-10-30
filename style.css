@@ -1,7 +1,7 @@
 :root{
 
-    --sitebg:hsl(268, 52%, 53%);
-    --bg:hsl(304, 92%, 90%);
+    --sitebg:hsl(304, 92%, 90%);
+    --bg:hsl(304, 92%, 94%);
     --borders:hsl(268, 68%, 62%);
     --borders-shadow:rgba(129, 78, 187, 0.442);
     --text:hsl(236, 48%, 53%);
@@ -12,7 +12,7 @@
 }
 
 body{
-    background-color: var(--bg);
+    background-color: var(--sitebg);
     padding-bottom: 1000px;
     font-family: "Press Start 2P";
 }
@@ -28,10 +28,11 @@ button{
     max-width: 1400px;
     margin: 0 auto;
     flex-direction: column;
-    row-gap: 22px;
+    row-gap: 42px;
     min-width: 1200px;
     max-width: 1400px;
     align-items: center;
+    margin-top: 16px;
 }
 
 .header{
