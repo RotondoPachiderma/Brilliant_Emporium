@@ -150,8 +150,10 @@ button{
     border-radius: 10%;
     border-color: var(--borders);
     font-size: 40px;
+    padding: 3px 3px;
     margin: 0px;
     background: var(--palette1);
+    text-align: center;
 }
 
 .item-text{

@@ -1,0 +1,58 @@
+{
+  "verita": {
+    "costo": 10,
+    "descrizione": "risposta sincera ed esaustiva ad una qualsiasi domanda",
+    "rarita": "comune",
+    "ripetibile": true,
+    "immagine": "&#x1F925",
+    "categoria": ["interazione", "digitale", "ripetibile"]
+  },
+  "sticker_halloween": {
+    "costo": 100,
+    "descrizione": "sticker incredibile di un mio costume di Halloween",
+    "rarita": "epico",
+    "ripetibile": false,
+    "immagine": "&#128087",
+    "categoria": ["digitale", "sticker", "stagionale", "collezionabile"]
+  },
+  "foto_capelli_rosa": {
+    "costo": 25,
+    "descrizione": "foto di me con i capelli rosa",
+    "rarita": "raro",
+    "ripetibile": false,
+    "immagine": "&#127752",
+    "categoria": ["media", "foto", "personale", "contenuto"]
+  },
+  "gif_capelli_lunghi": {
+    "costo": 40,
+    "descrizione": "gif di me con i capelli lunghi",
+    "rarita": "raro",
+    "ripetibile": false,
+    "immagine": "&#128105",
+    "categoria": ["media", "gif", "personale", "contenuto"]
+  },
+  "complimento_sincero": {
+    "costo": 15,
+    "descrizione": "ti faccio un complimento sincero e non scherzoso",
+    "rarita": "comune",
+    "ripetibile": true,
+    "immagine": "&#x2764",
+    "categoria": ["interazione", "verbale", "ripetibile"]
+  },
+  "set_lucine": {
+    "costo": 190,
+    "descrizione": "ti regalo un set di lucine particolari",
+    "rarita": "epico",
+    "ripetibile": false,
+    "immagine": "&#x2728",
+    "categoria": ["fisico", "regalo", "decorazione", "artigianale"]
+  },
+  "oggetto_personalizzato": {
+    "costo": 100,
+    "descrizione": "oggetto personalizzato fatto a mano da me",
+    "rarita": "epico",
+    "ripetibile": false,
+    "immagine": "&#128736",
+    "categoria": ["fisico", "personalizzato", "regalo", "artigianale"]
+  }
+}
