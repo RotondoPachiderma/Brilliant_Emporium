@@ -4,6 +4,7 @@
     --bg:hsl(304, 92%, 90%);
     --borders:hsl(268, 68%, 62%);
     --borders-shadow:rgba(129, 78, 187, 0.442);
+    --header:hsl(236, 48%, 53%);
     --text:hsl(236, 48%, 53%);
     --textinf:hsl(236, 48%, 62%);
     --text1-shadow:#33387d81;
@@ -51,22 +52,22 @@ button{
     font-size: 34px;
     text-shadow: 0 2px 0 var(--text1-shadow);
     text-wrap: nowrap;
-    color: var(--text);
+    color: var(--header);
     padding: 20px 100px 20px 100px;
     max-width: 1000px;
 }
 
 .products-wrapper{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    column-gap: 20px;
 }
 
 
 .side{
-    flex: 1;
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 140px 1fr;
+    row-gap: 15px;
 }
 
 .points-display{
@@ -80,7 +81,6 @@ button{
     font-size: 16px;
     color: var(--text);
     padding: 15px 20px 15px 20px;
-    margin-bottom: 15px;
 }
 
 .filters{
@@ -125,6 +125,7 @@ button{
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+    row-gap: 15px;
 }
 
 .items{
@@ -136,12 +137,11 @@ button{
     font-size: 16px;
     color: var(--text);
     padding: 12px 14px 12px 14px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns:60px 1fr 115px 115px ;
     column-gap: 10px;
-    justify-content: space-between;
     align-items: center;
+    justify-items: start;
 }
 
 .item-photo{
@@ -150,7 +150,6 @@ button{
     border-radius: 10%;
     border-color: var(--borders);
     font-size: 40px;
-    padding: 3px 3px;
     margin: 0px;
     background: var(--palette1);
     text-align: center;
@@ -160,7 +159,6 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    min-width: 540px;
 }
 
 .item-name{
@@ -180,13 +178,11 @@ button{
     border-width: 3px;
     border-style: solid;
     border-color: var(--borders);
-    margin: 0;
     background: var(--palette1);
     font-size: 16px;
     padding: 10px;
     color: var(--text);
-    margin-left: auto;
-    min-width: 110px;
+    width: 100%;
 }
 
 .item-buy{
@@ -195,7 +191,6 @@ button{
     border-radius: 18px;
     border-color: var(--borders);
     box-shadow: 3px 3px 0 var(--borders-shadow);
-    margin: 0;
     background: var(--buybutt);
     font-size: 16px;
     color: var(--text);
