@@ -144,8 +144,8 @@ button{
     color: var(--text);
     padding: 12px 14px 12px 14px;
     display: grid;
-    grid-template-columns:60px 1fr 115px 115px ;
-    column-gap: 10px;
+    grid-template-columns:60px 1fr 115px auto ;
+    column-gap: 12px;
     align-items: center;
     justify-items: start;
 }
@@ -198,6 +198,7 @@ button{
     padding: 10px;
     color: var(--text);
     width: 100%;
+    height: 40px;
 }
 
 .item-buy{
@@ -209,6 +210,8 @@ button{
     background: var(--buybutt);
     font-size: 16px;
     color: var(--text);
+    margin-left: 18px;
+    
 }
 
 .item-buy:hover,.filter-button:hover{
