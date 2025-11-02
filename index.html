@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="brilliant-emporium.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -32,38 +31,17 @@
                     <button class="filter-button">Date nights</button>
                 </div>
             </div>
-            <div class="catalogo-wrapper">
-                <div class="items">
-                    <p class="item-photo"> &#128512</p>
-                    <div class="item-text">
-                        <div class="item-name-rarity">
-                            <p class="item-name">Verità</p>
-                        </div>
-                        <p class="item-desc"> Risposta sincera ed esaustiva ad una qualsiasi domanda Risposta sincera ed esaustiva ad una qualsiasi domanda Risposta sincera ed esaustiva ad una qualsiasi domanda Risposta sincera ed esaustiva ad una qualsiasi domanda</p>
-                    </div>
-                    <button class="item-price">10pt</button>
-                    <button class="item-buy">Compra</button>
-                </div>
-                <div class="items">
-                    <p class="item-photo"> &#128512</p>
-                    <div class="item-text">
-                        <p class="item-name">Sticker incredibile</p>
-                        <p class="item-desc"> Sticker incredibile di un mio costume di halloween</p>
-                    </div>
-                    <button class="item-price">100pt</button>
-                    <button class="item-buy">Compra</button>
-                </div>
-                <div class="items">
-                    <p class="item-photo"> &#128512</p>
-                    <div class="item-text">
-                        <p class="item-name">Non per vantarmi</p>
-                        <p class="item-desc"> Foto di me con i capelli rosa</p>
-                    </div>
-                    <button class="item-price">25pt</button>
-                    <button class="item-buy">Compra</button>
-                </div>
+            <div class="catalogo-wrapper js-catalogo-wrapper">
             </div>
         </div>
     </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const shop = shopCreator(products)
+        console.log(shop)
+        htmlInjector(shop, ".js-catalogo-wrapper")
+    </script>
 </body>
 </html>

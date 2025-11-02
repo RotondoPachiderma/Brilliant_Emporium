@@ -2,7 +2,7 @@ const products = [
   {
     name: "Verità",
     costo: 10,
-    descrizione: "risposta sincera ed esaustiva ad una qualsiasi domanda",
+    descrizione: "Risposta sincera ed esaustiva ad una qualsiasi domanda",
     rarita: "comune",
     ripetibile: true,
     immagine: "🤥",
@@ -11,7 +11,7 @@ const products = [
   {
     name: "Sticker incredibile",
     costo: 100,
-    descrizione: "sticker incredibile di un mio costume di Halloween",
+    descrizione: "Sticker incredibile di un mio costume di Halloween",
     rarita: "epico",
     ripetibile: false,
     immagine: "👗",
@@ -20,7 +20,7 @@ const products = [
   {
     name: "Non per vantarmi",
     costo: 25,
-    descrizione: "foto di me con i capelli rosa",
+    descrizione: "Foto di me con i capelli rosa",
     rarita: "raro",
     ripetibile: false,
     immagine: "🌈",
@@ -29,7 +29,7 @@ const products = [
   {
     name: "Metallaro",
     costo: 40,
-    descrizione: "gif di me con i capelli lunghi",
+    descrizione: "Gif di me con i capelli lunghi",
     rarita: "raro",
     ripetibile: false,
     immagine: "👩",
@@ -38,7 +38,7 @@ const products = [
   {
     name: "Complimento sincero",
     costo: 15,
-    descrizione: "ti faccio un complimento sincero e non scherzoso",
+    descrizione: "Ti faccio un complimento sincero e non scherzoso",
     rarita: "comune",
     ripetibile: true,
     immagine: "❤️",
@@ -47,7 +47,7 @@ const products = [
   {
     name: "Set Lucine",
     costo: 190,
-    descrizione: "ti regalo un set di lucine particolari",
+    descrizione: "Ti regalo un set di lucine particolari",
     rarita: "epico",
     ripetibile: false,
     immagine: "✨",
@@ -56,7 +56,7 @@ const products = [
   {
     name: "Oggetto personalizzato",
     costo: 100,
-    descrizione: "oggetto personalizzato fatto a mano da me",
+    descrizione: "Oggetto personalizzato fatto a mano da me",
     rarita: "epico",
     ripetibile: false,
     immagine: "🛠️",

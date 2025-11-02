@@ -1,4 +1,4 @@
-function shopCreator(){
+function shopCreator(products){
     let html = ""
     products.forEach(product =>{
         let productTab = `
@@ -12,9 +12,13 @@ function shopCreator(){
                 </div>
                 <button class="item-price">${product.costo}pt</button>
                 <button class="item-buy">Compra</button>
-            </div>
-        `
+            </div>`
         html += productTab
     })
     return html
+}
+
+function htmlInjector(element, locationClass){
+    const location = document.querySelector(locationClass)
+    location.innerHTML = element
 }
