@@ -30,7 +30,7 @@ function filtersCreator(products){
     })
     filters.forEach(filter =>{
         let button = `
-        <button class="filter-button" onclick="filtering('${filter}', products)">${filter}</button>`
+        <button class="filter-button js-${filter}-button" onclick="buttonFunction('${filter}')">${filter}</button>`
         html += button
     })
     return html
@@ -56,6 +56,20 @@ function filtering(filter, products){
         }
     })
     htmlInjector(html, ".js-catalogo-wrapper")
+}
+
+function buttonFunction(button){
+    let bottone = document.querySelector(`.js-${button}-button`)
+    if (!bottone.classList.contains("filter-button-active")){
+        htmlInjector(filters, ".js-filters")
+        bottone = document.querySelector(`.js-${button}-button`)
+        filtering(`${button}`, products)
+        bottone.classList.add("filter-button-active")
+    }
+    else{
+        htmlInjector(shop, ".js-catalogo-wrapper")
+        bottone.classList.remove("filter-button-active")
+    }
 }
 
 function htmlInjector(element, locationClass){

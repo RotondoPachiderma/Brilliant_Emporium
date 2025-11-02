@@ -119,6 +119,20 @@ button{
 
 }
 
+.filter-button-active{
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 18px;
+    border-color: var(--borders);
+    box-shadow: none;
+    padding: 0px 11px;
+    background: var(--palette1);
+    font-size: 16px;
+    color: var(--text);
+    height: 45px;
+    margin: 2px 0px 0px 4px;
+}
+
 .catalogo-wrapper{
     flex: 5;
     border-width: 4px;
@@ -221,4 +235,8 @@ button{
 .item-buy:active,.filter-button:active{
     box-shadow: none;
     transform: translate(2px, 4px);
+}
+
+.filter-button-active:active{
+    transform: translate(1px, 1px);
 }
