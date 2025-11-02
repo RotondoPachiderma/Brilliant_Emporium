@@ -161,6 +161,14 @@ button{
     justify-content: space-evenly;
 }
 
+.item-name-rarity{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 14px;
+    justify-content: start;
+    align-items: center;
+}
+
 .item-name{
     font-size: 18px;
     font-weight: 600;
