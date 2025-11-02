@@ -18,7 +18,7 @@ body{
     font-family: "Press Start 2P";
 }
 
-.header, .catalogo-wrapper, .points-display, .filters{
+.header, .catalogo-wrapper, .points-display, .filters-wrapper{
     background-color: var(--bg);
 }
 
@@ -59,14 +59,14 @@ button{
 
 .products-wrapper{
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: auto 1fr;
     column-gap: 20px;
 }
 
 
 .side{
     display: grid;
-    grid-template-rows: 140px 1fr;
+    grid-template-rows: auto auto 1fr;
     row-gap: 15px;
 }
 
@@ -83,7 +83,7 @@ button{
     padding: 15px 20px 15px 20px;
 }
 
-.filters{
+.filters-wrapper{
     border-width: 4px;
     border-style: solid;
     border-radius: 10px;
@@ -91,11 +91,17 @@ button{
     box-shadow: 7px 7px 0 var(--borders-shadow);
     font-size: 16px;;
     color: var(--text);
-    padding: 15px;
+    padding: 25px 15px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 25px;
+    height: auto;  
+}
+
+.filters{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    
 }
 
 .filter-button{
@@ -105,6 +111,7 @@ button{
     border-color: var(--borders);
     box-shadow: 3px 3px 0 var(--borders-shadow);
     margin: 0;
+    padding: 1px 13px;
     background: var(--palette1);
     font-size: 16px;
     color: var(--text);
@@ -122,7 +129,6 @@ button{
     font-size: 16px;
     color: var(--text);
     padding: 15px;
-    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -180,6 +186,7 @@ button{
     font-size: 14px;
     color: var(--textinf);
     margin: 4px;
+    line-height: 18px;
 }
 
 .item-price{

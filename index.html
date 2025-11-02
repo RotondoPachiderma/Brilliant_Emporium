@@ -20,19 +20,12 @@
                     <p>Player:Piccola </p>
                     <p>Points:200</p> 
                 </div>
-                <div class="filters">
-                    <p style="align-self: center;">FILTRI</p>
-                    <button class="filter-button">Dolcezze</button>
-                    <button class="filter-button">Coccole</button>
-                    <button class="filter-button">Date nights</button>
-                    <button class="filter-button">Date nights</button>
-                    <button class="filter-button">Date nights</button>
-                    <button class="filter-button">Date nights</button>
-                    <button class="filter-button">Date nights</button>
+                <div class="filters-wrapper">
+                    <p style="justify-self: center; height: auto; margin: 0px;">FILTRI</p>
+                    <div class="filters js-filters"></div>
                 </div>
             </div>
-            <div class="catalogo-wrapper js-catalogo-wrapper">
-            </div>
+            <div class="catalogo-wrapper js-catalogo-wrapper"></div>
         </div>
     </div>
 
@@ -42,6 +35,9 @@
         const shop = shopCreator(products)
         console.log(shop)
         htmlInjector(shop, ".js-catalogo-wrapper")
+        const filters = filtersCreator(products)
+        console.log(filters)
+        htmlInjector(filters, ".js-filters")
     </script>
 </body>
 </html>

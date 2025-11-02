@@ -6,7 +6,7 @@ const products = [
     rarita: "comune",
     ripetibile: true,
     immagine: "🤥",
-    categoria: ["verbale", "ripetibile"]
+    categoria: ["Verbale", "Ripetibile"]
   },
   {
     name: "Sticker incredibile",
@@ -15,7 +15,7 @@ const products = [
     rarita: "epico",
     ripetibile: false,
     immagine: "👗",
-    categoria: ["media", "collezionabile"]
+    categoria: ["Media", "Collezionabile"]
   },
   {
     name: "Non per vantarmi",
@@ -24,7 +24,7 @@ const products = [
     rarita: "raro",
     ripetibile: false,
     immagine: "🌈",
-    categoria: ["media", "collezionabile"]
+    categoria: ["Media", "Collezionabile"]
   },
   {
     name: "Metallaro",
@@ -33,7 +33,7 @@ const products = [
     rarita: "raro",
     ripetibile: false,
     immagine: "👩",
-    categoria: ["media", "collezionabile"]
+    categoria: ["Media", "Collezionabile"]
   },
   {
     name: "Complimento sincero",
@@ -42,7 +42,7 @@ const products = [
     rarita: "comune",
     ripetibile: true,
     immagine: "❤️",
-    categoria: ["verbale", "ripetibile"]
+    categoria: ["Verbale", "Ripetibile"]
   },
   {
     name: "Set Lucine",
@@ -51,7 +51,7 @@ const products = [
     rarita: "epico",
     ripetibile: false,
     immagine: "✨",
-    categoria: ["regalo"]
+    categoria: ["Regalo"]
   },
   {
     name: "Oggetto personalizzato",
@@ -60,6 +60,6 @@ const products = [
     rarita: "epico",
     ripetibile: false,
     immagine: "🛠️",
-    categoria: ["regalo"]
+    categoria: ["Regalo"]
   }
 ];
