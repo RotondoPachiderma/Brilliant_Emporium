@@ -32,14 +32,9 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script>
-        const shop = shopCreator(products)
-        console.log(shop)
-        htmlInjector(shop, ".js-catalogo-wrapper")
-        const filters = filtersCreator(products)
-        console.log(filters)
-        htmlInjector(filters, ".js-filters")
+        htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
+        htmlInjector(filtersCreator(products), ".js-filters")
         let bottone = document.querySelector(`.js-Verbale-button`)
-
     </script>
 </body>
 </html>

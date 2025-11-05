@@ -63,3 +63,6 @@ const products = [
     categoria: ["Regalo"]
   }
 ];
+
+
+const points = 48

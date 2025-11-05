@@ -11,7 +11,7 @@ function shopCreator(products){
                 <p class="item-desc"> ${product.descrizione}</p>
             </div>
             <button class="item-price">${product.costo}pt</button>
-            <button class="item-buy">Compra</button>
+            <button class="item-buy js-${product.name}-buy" onclick="productButtonFunction('${product.name}')">Compra</button>
         </div>`
         html += productTab
     })
@@ -30,7 +30,7 @@ function filtersCreator(products){
     })
     filters.forEach(filter =>{
         let button = `
-        <button class="filter-button js-${filter}-button" onclick="buttonFunction('${filter}')">${filter}</button>`
+        <button class="filter-button js-${filter}-button" onclick="filterButtonFunction('${filter}')">${filter}</button>`
         html += button
     })
     return html
@@ -50,7 +50,7 @@ function filtering(filter, products){
                     <p class="item-desc"> ${product.descrizione}</p>
                 </div>
                 <button class="item-price">${product.costo}pt</button>
-                <button class="item-buy">Compra</button>
+                <button class="item-buy js-${product.name}-buy">Compra</button>
             </div>`
         html += productTab
         }
@@ -58,19 +58,24 @@ function filtering(filter, products){
     htmlInjector(html, ".js-catalogo-wrapper")
 }
 
-function buttonFunction(button){
-    let bottone = document.querySelector(`.js-${button}-button`)
+function filterButtonFunction(filter){
+    let bottone = document.querySelector(`.js-${filter}-button`)
     if (!bottone.classList.contains("filter-button-active")){
-        htmlInjector(filters, ".js-filters")
-        bottone = document.querySelector(`.js-${button}-button`)
-        filtering(`${button}`, products)
+        htmlInjector(filtersCreator(products), ".js-filters")
+        bottone = document.querySelector(`.js-${filter}-button`)
+        filtering(`${filter}`, products)
         bottone.classList.add("filter-button-active")
     }
     else{
-        htmlInjector(shop, ".js-catalogo-wrapper")
+        htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
         bottone.classList.remove("filter-button-active")
     }
 }
+
+function productButtonFunction(product){
+    let bottone = document.querySelector(`.js-${product}-button`)
+}
+
 
 function htmlInjector(element, locationClass){
     const location = document.querySelector(locationClass)
