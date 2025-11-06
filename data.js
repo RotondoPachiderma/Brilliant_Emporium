@@ -1,5 +1,6 @@
 const products = [
   {
+    id: 1,
     name: "Verità",
     costo: 10,
     descrizione: "Risposta sincera ed esaustiva ad una qualsiasi domanda",
@@ -9,6 +10,7 @@ const products = [
     categoria: ["Verbale", "Ripetibile"]
   },
   {
+    id: 2,
     name: "Sticker incredibile",
     costo: 100,
     descrizione: "Sticker incredibile di un mio costume di Halloween",
@@ -18,6 +20,7 @@ const products = [
     categoria: ["Media", "Collezionabile"]
   },
   {
+    id: 3,
     name: "Non per vantarmi",
     costo: 25,
     descrizione: "Foto di me con i capelli rosa",
@@ -27,6 +30,7 @@ const products = [
     categoria: ["Media", "Collezionabile"]
   },
   {
+    id: 4,
     name: "Metallaro",
     costo: 40,
     descrizione: "Gif di me con i capelli lunghi",
@@ -36,6 +40,7 @@ const products = [
     categoria: ["Media", "Collezionabile"]
   },
   {
+    id: 5,
     name: "Complimento sincero",
     costo: 15,
     descrizione: "Ti faccio un complimento sincero e non scherzoso",
@@ -45,6 +50,7 @@ const products = [
     categoria: ["Verbale", "Ripetibile"]
   },
   {
+    id: 6,
     name: "Set Lucine",
     costo: 190,
     descrizione: "Ti regalo un set di lucine particolari",
@@ -54,6 +60,7 @@ const products = [
     categoria: ["Regalo"]
   },
   {
+    id: 7,
     name: "Oggetto personalizzato",
     costo: 100,
     descrizione: "Oggetto personalizzato fatto a mano da me",
