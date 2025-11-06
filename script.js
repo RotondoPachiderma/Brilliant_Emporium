@@ -109,7 +109,7 @@ function confirmationButtonFunction(youSure, cost){
         setTimeout(()=>{
             brokepopup.classList.add("hidden")
             obscuredOverlay.classList.add("hidden")
-        },3000)
+        },2000)
         return
     }
     thankspopup.classList.remove("hidden")
