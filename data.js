@@ -80,6 +80,3 @@ const products = [
     categoria: ["Fisico"]
   }
 ];
-
-
-const points = 48
