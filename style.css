@@ -18,10 +18,6 @@ body{
     font-family: "Press Start 2P";
 }
 
-.header, .catalogo-wrapper, .points-display, .filters-wrapper{
-    background-color: var(--bg);
-}
-
 button{
     font-family: "Press Start 2P";
     transition: 0.1s;
@@ -38,6 +34,7 @@ button{
     max-width: 1400px;
     align-items: center;
     margin-top: 16px;
+    padding-bottom: 100px;
 }
 
 .header{
@@ -48,6 +45,7 @@ button{
     border-style: solid;
     border-radius: 10px;
     border-color: var(--borders);
+    background-color: var(--bg);
     box-shadow: 7px 7px 0 var(--borders-shadow);
     font-size: 34px;
     text-shadow: 0 2px 0 var(--text1-shadow);
@@ -77,6 +75,7 @@ button{
     border-style: solid;
     border-radius: 10px;
     border-color: var(--borders);
+    background-color: var(--bg);
     box-shadow: 7px 7px 0 var(--borders-shadow);
     font-size: 16px;
     color: var(--text);
@@ -88,6 +87,7 @@ button{
     border-style: solid;
     border-radius: 10px;
     border-color: var(--borders);
+    background-color: var(--bg);
     box-shadow: 7px 7px 0 var(--borders-shadow);
     font-size: 16px;;
     color: var(--text);
@@ -139,6 +139,7 @@ button{
     border-style: solid;
     border-radius: 10px;
     border-color: var(--borders);
+    background-color: var(--bg);
     box-shadow: 7px 7px 0 var(--borders-shadow);
     font-size: 16px;
     color: var(--text);
@@ -228,15 +229,95 @@ button{
     
 }
 
-.item-buy:hover,.filter-button:hover{
+.item-buy:hover, .filter-button:hover, .confirm-buttons:hover{
     cursor: pointer;
 }
 
-.item-buy:active,.filter-button:active{
+.item-buy:active, .filter-button:active, .confirm-buttons:active{
     box-shadow: none;
     transform: translate(2px, 4px);
 }
 
-.filter-button-active:active{
+.filter-button-active:active, .confirm-buttons-active:active{
     transform: translate(1px, 1px);
+}
+
+
+.obscuredOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10; 
+}
+
+.buy-overlay{
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: var(--borders);
+    background-color: var(--bg);
+    box-shadow: 7px 7px 0 var(--borders-shadow);
+    color: var(--text);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 18px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 15px;
+    max-width: 600px;
+    z-index: 100;
+}
+
+.confirmation-text{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text);
+    margin: 5px;
+    line-height: 22px;
+}
+
+.confirm-buttons-wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.confirm-buttons{
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 18px;
+    border-color: var(--borders);
+    box-shadow: 3px 3px 0 var(--borders-shadow);
+    background: var(--buybutt);
+    font-size: 16px;
+    color: var(--text);
+    width: 100px;
+    justify-self: center;
+}
+
+.thanks, .broke{
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: var(--borders);
+    background-color: var(--bg);
+    box-shadow: 7px 7px 0 var(--borders-shadow);
+    color: var(--text);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 18px;
+    text-align: center;
+    z-index: 100;
+    margin: 0;
+}
+
+.hidden {
+  display: none;
 }

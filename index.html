@@ -17,8 +17,8 @@
         <div class="products-wrapper">
             <div class="side">
                 <div class="points-display">
-                    <p>Player:Piccola </p>
-                    <p>Points:200</p> 
+                    <p>Player:Piccola</p>
+                    <p>Points:<span class="balance">200</span></p> 
                 </div>
                 <div class="filters-wrapper">
                     <p style="justify-self: center; height: auto; margin: 0px;">FILTRI</p>
@@ -29,12 +29,27 @@
         </div>
     </div>
 
+    <div class="obscuredOverlay hidden"></div>
+
+    <div class="buy-overlay hidden">
+        <p class="confirmation-text">Sicura di voler procedere con l'acquisto di <u class="confirmation-product"></u>?</p>
+        <div class="confirm-buttons-wrapper">
+            <button class="confirm-buttons" onclick="confirmationButtonFunction(true, currentCost)">Si</button>
+            <button class="confirm-buttons" onclick="confirmationButtonFunction(false)">No</button>
+        </div>
+    </div>
+
+    <p class="thanks hidden">La ringraziamo per l'acquisto </p>
+    <p class="broke hidden">Temo lei sia una poveraccia, non se lo puo' permettere </p>
+
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script>
         htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
         htmlInjector(filtersCreator(products), ".js-filters")
         let bottone = document.querySelector(`.js-Verbale-button`)
+        let currentCost = 0
+        let obscuredOverlay = document.querySelector(".obscuredOverlay")
     </script>
 </body>
 </html>
