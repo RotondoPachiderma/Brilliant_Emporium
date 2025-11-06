@@ -180,6 +180,7 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    min-width: 500px;
 }
 
 .item-name-rarity{
