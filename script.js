@@ -31,8 +31,10 @@ function productHtmlGenerator(product){
 function shopCreator(products){
     let html = ""
     products.forEach(product =>{
-        let productTab = productHtmlGenerator(product)
-        html += productTab
+        if (product.active){
+            let productTab = productHtmlGenerator(product)
+            html += productTab
+        }
     })
     return html
 }
@@ -42,11 +44,13 @@ function filtersCreator(products){
     let filters = []
     let html = ""
     products.forEach(product =>{
-        product.categoria.forEach(filter =>{
-            if (!filters.includes(filter)) {
-                filters.push(filter)
-            }
-        })
+        if (product.active){
+            product.categoria.forEach(filter =>{
+                if (!filters.includes(filter)) {
+                    filters.push(filter)
+                }
+            })
+        }
     })
     filters.forEach(filter =>{
         let button = `
@@ -60,9 +64,11 @@ function filtersCreator(products){
 function filtering(filter, products){
     let html = ""
     products.forEach(product =>{
-        if (product.categoria.includes(filter)){
-            let productTab = productHtmlGenerator(product)
-        html += productTab
+        if (product.active){
+            if (product.categoria.includes(filter)){
+                let productTab = productHtmlGenerator(product)
+            html += productTab
+            }
         }
     })
     htmlInjector(html, ".js-catalogo-wrapper")

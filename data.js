@@ -7,7 +7,8 @@ const products = [
     rarita: "comune",
     ripetibile: true,
     immagine: "🤥",
-    categoria: ["Verbale", "Ripetibile"]
+    categoria: ["Verbale", "Ripetibile"],
+    active:true
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const products = [
     rarita: "epico",
     ripetibile: false,
     immagine: "👗",
-    categoria: ["Media", "Collezionabile"]
+    categoria: ["Media", "Collezionabile"],
+    active:true
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const products = [
     rarita: "raro",
     ripetibile: false,
     immagine: "🌈",
-    categoria: ["Media", "Collezionabile"]
+    categoria: ["Media", "Collezionabile"],
+    active:true
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ const products = [
     rarita: "raro",
     ripetibile: false,
     immagine: "👩",
-    categoria: ["Media", "Collezionabile"]
+    categoria: ["Media", "Collezionabile"],
+    active:true
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ const products = [
     rarita: "comune",
     ripetibile: true,
     immagine: "❤️",
-    categoria: ["Verbale", "Ripetibile"]
+    categoria: ["Verbale", "Ripetibile"],
+    active:true
   },
   {
     id: 6,
@@ -57,7 +62,8 @@ const products = [
     rarita: "epico",
     ripetibile: false,
     immagine: "✨",
-    categoria: ["Regalo"]
+    categoria: ["Regalo"],
+    active:true
   },
   {
     id: 7,
@@ -67,6 +73,18 @@ const products = [
     rarita: "epico",
     ripetibile: false,
     immagine: "🛠️",
-    categoria: ["Regalo"]
+    categoria: ["Regalo"],
+    active:true
+  },
+  {
+    id: 8,
+    name: "Bacio",
+    costo: 1,
+    descrizione: "Un bacio",
+    rarita: "comune",
+    ripetibile: true,
+    immagine: "😘",
+    categoria: ["Fisico"],
+    active:false
   }
 ];
