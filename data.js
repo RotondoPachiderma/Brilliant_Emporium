@@ -68,15 +68,5 @@ const products = [
     ripetibile: false,
     immagine: "🛠️",
     categoria: ["Regalo"]
-  },
-  {
-    id: 8,
-    name: "Bacio",
-    costo: 1,
-    descrizione: "Un bacio",
-    rarita: "comune",
-    ripetibile: true,
-    immagine: "😘",
-    categoria: ["Fisico"]
   }
 ];
