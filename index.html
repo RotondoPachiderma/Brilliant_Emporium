@@ -33,10 +33,7 @@
 
     <div class="buy-overlay hidden">
         <p class="confirmation-text">Sicura di voler procedere con l'acquisto di <u class="confirmation-product"></u>?</p>
-        <div class="confirm-buttons-wrapper">
-            <button class="confirm-buttons" onclick="confirmationButtonFunction(true, currentCost)">Si</button>
-            <button class="confirm-buttons" onclick="confirmationButtonFunction(false)">No</button>
-        </div>
+        <div class="confirm-buttons-wrapper"></div>
     </div>
 
     <p class="thanks hidden">La ringraziamo per l'acquisto </p>
@@ -45,10 +42,7 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script>
-        htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
-        htmlInjector(filtersCreator(products), ".js-filters")
-        let bottone = document.querySelector(`.js-Verbale-button`)
-        let obscuredOverlay = document.querySelector(".obscuredOverlay")
+        init()
     </script>
 </body>
 </html>

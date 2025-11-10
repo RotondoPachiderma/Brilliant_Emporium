@@ -1,3 +1,9 @@
+function init() {
+    htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
+    htmlInjector(filtersCreator(products), ".js-filters")
+}
+
+
 //Ritorna l'oggetto di un prodotto dato il suo id in numero o stringa
 function objectByUuid(id){
     id = Number(id)
@@ -91,10 +97,11 @@ function filterButtonFunction(filter){
 
 //Dato l'id di un prodotto inietta il nome del prodotto nella scheda di checkout e imposta il suo costo
 function buyButton(productId){
-    let popup = document.querySelector(".buy-overlay")
-    let confirmationProduct = document.querySelector(".confirmation-product")
-    let product = objectByUuid(productId)
-    let confirmationButtonsPlace = document.querySelector(".confirm-buttons-wrapper")
+    const popup = document.querySelector(".buy-overlay")
+    const confirmationProduct = document.querySelector(".confirmation-product")
+    const product = objectByUuid(productId)
+    const confirmationButtonsPlace = document.querySelector(".confirm-buttons-wrapper")
+    const obscuredOverlay = document.querySelector(".obscuredOverlay")
     confirmationProduct.innerHTML = `${product.name}`
     popup.classList.remove("hidden")
     obscuredOverlay.classList.remove("hidden")
@@ -105,10 +112,11 @@ function buyButton(productId){
 }
 
 function confirmationButtonFunction(youSure, cost){
-    let popup = document.querySelector(".buy-overlay")
-    let thankspopup = document.querySelector(".thanks")
-    let brokepopup = document.querySelector(".broke")
-    let balance = document.querySelector(".balance")
+    const popup = document.querySelector(".buy-overlay")
+    const thankspopup = document.querySelector(".thanks")
+    const brokepopup = document.querySelector(".broke")
+    const balance = document.querySelector(".balance")
+    const obscuredOverlay = document.querySelector(".obscuredOverlay")
     popup.classList.add("hidden")
     if (!youSure){
         obscuredOverlay.classList.add("hidden")
@@ -137,7 +145,7 @@ function youBroke(cost){
 
 
 function balanceSetter(){
-    let balanceDisplay = document.querySelector(".balance")
+    const balanceDisplay = document.querySelector(".balance")
     if (localStorage.getItem("balance")){
         balanceDisplay.innerHTML=Number(localStorage.getItem("balance"))
     }
