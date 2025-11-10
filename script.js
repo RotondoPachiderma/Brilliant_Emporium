@@ -94,10 +94,14 @@ function buyButton(productId){
     let popup = document.querySelector(".buy-overlay")
     let confirmationProduct = document.querySelector(".confirmation-product")
     let product = objectByUuid(productId)
+    let confirmationButtonsPlace = document.querySelector(".confirm-buttons-wrapper")
     confirmationProduct.innerHTML = `${product.name}`
     popup.classList.remove("hidden")
     obscuredOverlay.classList.remove("hidden")
-    currentCost = product.costo
+    confirmationButtonsPlace.innerHTML = `
+        <button class="confirm-buttons" onclick="confirmationButtonFunction(true, ${product.costo})">Si</button>
+        <button class="confirm-buttons" onclick="confirmationButtonFunction(false)">No</button>
+    `
 }
 
 function confirmationButtonFunction(youSure, cost){
@@ -110,7 +114,7 @@ function confirmationButtonFunction(youSure, cost){
         obscuredOverlay.classList.add("hidden")
         return
     }
-    if (youBroke()){
+    if (youBroke(cost)){
         brokepopup.classList.remove("hidden")
         setTimeout(()=>{
             brokepopup.classList.add("hidden")
@@ -127,8 +131,8 @@ function confirmationButtonFunction(youSure, cost){
     localStorage.setItem("balance", `${balance.innerHTML}`)
 }
 
-function youBroke(){
-    if (currentCost > document.querySelector(".balance").innerHTML){return true}
+function youBroke(cost){
+    if (cost > document.querySelector(".balance").innerHTML){return true}
 }
 
 
