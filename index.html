@@ -14,35 +14,14 @@
         <div class="header">
             Francesco's Brilliant Emporium
         </div>
-        <div class="products-wrapper">
-            <div class="side">
-                <div class="points-display">
-                    <p>Player:Piccola</p>
-                    <p>Points:<span class="balance">67</span></p>
-                </div>
-                <div class="filters-wrapper">
-                    <p style="justify-self: center; height: auto; margin: 0px;">FILTRI</p>
-                    <div class="filters js-filters"></div>
-                </div>
-            </div>
-            <div class="catalogo-wrapper js-catalogo-wrapper"></div>
+        <div class="shop-wrapper">
         </div>
-    </div>
+        
 
-    <div class="obscuredOverlay hidden"></div>
-
-    <div class="buy-overlay hidden">
-        <p class="confirmation-text">Sicura di voler procedere con l'acquisto di <u class="confirmation-product"></u>?</p>
-        <div class="confirm-buttons-wrapper"></div>
-    </div>
-
-    <p class="thanks hidden">La ringraziamo per l'acquisto </p>
-    <p class="broke hidden">Temo lei sia una poveraccia, non se lo puo' permettere </p>
-
-   <script src="data.js"></script>
-    <script src="script.js"></script>
+   <script src="./data.js"></script>
+    <script src="./script.js"></script>
     <script>
-        catalog.init(products, ".js-catalogo-wrapper", ".js-filters", ".buy-overlay", ".confirmation-product", ".confirm-buttons-wrapper", ".obscuredOverlay", ".broke", ".thanks", 67, ".balance")
+        const Emporium = new Shop("Emporium", products, 67, ".shop-wrapper")
     </script>
 </body>
 </html>

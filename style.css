@@ -55,7 +55,7 @@ button{
     max-width: 1000px;
 }
 
-.products-wrapper{
+.sections-wrapper{
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 20px;
@@ -68,7 +68,7 @@ button{
     row-gap: 15px;
 }
 
-.points-display{
+.user-section{
     display: flex;
     flex-direction: column;
     border-width: 4px;
@@ -82,7 +82,7 @@ button{
     padding: 15px 20px 15px 20px;
 }
 
-.filters-wrapper{
+.filters-section{
     border-width: 4px;
     border-style: solid;
     border-radius: 10px;
@@ -98,7 +98,7 @@ button{
     height: auto;  
 }
 
-.filters{
+.filters-wrapper{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -133,7 +133,7 @@ button{
     margin: 2px 0px 0px 4px;
 }
 
-.catalogo-wrapper{
+.products-wrapper{
     flex: 5;
     border-width: 4px;
     border-style: solid;
@@ -244,7 +244,7 @@ button{
 }
 
 
-.obscuredOverlay{
+.obscured-overlay{
     position: fixed;
     top: 0;
     left: 0;
@@ -254,7 +254,7 @@ button{
     z-index: 10; 
 }
 
-.buy-overlay{
+.checkout-overlay{
     border-width: 4px;
     border-style: solid;
     border-radius: 10px;
