@@ -1,153 +1,155 @@
-function init() {
-    htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
-    htmlInjector(filtersCreator(products), ".js-filters")
-}
+const catalog = {
 
+    catalogProducts: undefined,
+    productDiv: undefined,
+    filtersDiv: undefined,
+    checkoutOverlay: undefined,
+    checkoutProductNameDiv: undefined,
+    confirmationButtonDiv: undefined,
+    obscuredOverlay: undefined,
+    brokeOverlay: undefined,
+    thanksOverlay: undefined,
+    balance: undefined,
+    balanceDiv: undefined,
 
-//Ritorna l'oggetto di un prodotto dato il suo id in numero o stringa
-function objectByUuid(id){
-    id = Number(id)
-    return products.find(product => product.id === id)
-}
+    //Given an array of products, it makes them of the Product class and insert each inside the catalogProducts array
+    init(rawProductArray, productDivClass, filtersDivClass, checkoutOverlayClass, checkoutProductNameDivClass, confirmationButtonDivClass, obscuredOverlayClass, brokeOverlayClass, thanksOverlayClass, balance, balanceDivClass){
+        let temp = []
+        rawProductArray.forEach(element => {
+            const p = new Product(element)
+            temp.push(p)
+        });
+        this.catalogProducts = temp;
+        this.productDiv = document.querySelector(productDivClass);
+        this.filtersDiv = document.querySelector(filtersDivClass);
+        this.checkoutOverlay = document.querySelector(checkoutOverlayClass);
+        this.checkoutProductNameDiv = document.querySelector(checkoutProductNameDivClass);
+        this.confirmationButtonDiv = document.querySelector(confirmationButtonDivClass);
+        this.obscuredOverlay = document.querySelector(obscuredOverlayClass);
+        this.brokeOverlay = document.querySelector(brokeOverlayClass);
+        this.thanksOverlay = document.querySelector(thanksOverlayClass);
+        this.balance = Number(balance);
+        this.balanceDiv = document.querySelector(balanceDivClass);
+        this.shopCreator()
+        this.filtersCreator()
+        this.balanceDiv.innerHTML = balance
+    },
 
+    //It takes the element from catalogProducts and for each element creates a HTML tab, then returns a div with all tabs. If given a filter as a string it filters products
+    shopCreator(filter = ""){
+        let catalogShopHTML = "";
+        this.catalogProducts.forEach(element =>{
+            if (!filter && element.active){
+                catalogShopHTML += element.productHTML
+            }
+            if (filter && element.category.includes(filter) && element.active){
+                catalogShopHTML += element.productHTML
+            }
+        })
+        this.productDiv.innerHTML = catalogShopHTML
+    },
 
-function htmlInjector(element, locationClass){
-    const location = document.querySelector(locationClass)
-    location.innerHTML = element
-}
-
-//Dato un oggetto prodotto ritorna l'HTML completo della tab di quel prodotto
-function productHtmlGenerator(product){
-    let productTab = `
-        <div class="items">
-            <p class="item-photo"> ${product.immagine}</p>
-            <div class="item-text">
-                <div class="item-name-rarity">
-                    <p class="item-name">${product.name}</p>
-                </div>
-                <p class="item-desc"> ${product.descrizione}</p>
-            </div>
-            <button class="item-price js-${product.id}-price">${product.costo}pt</button>
-            <button class="item-buy js-${product.id}-buy" onclick="buyButton(${product.id})">Compra</button>
-        </div>`
-    return productTab
-}
-
-//Dato un array di prodotti ritorna l'html dello shop
-function shopCreator(products){
-    let html = ""
-    products.forEach(product =>{
-        if (product.active){
-            let productTab = productHtmlGenerator(product)
-            html += productTab
-        }
-    })
-    return html
-}
-
-//Dato un array di prodotti ritorna l'html dei filtri
-function filtersCreator(products){
-    let filters = []
-    let html = ""
-    products.forEach(product =>{
-        if (product.active){
-            product.categoria.forEach(filter =>{
-                if (!filters.includes(filter)) {
-                    filters.push(filter)
+    //It takes the element from catalogProducts and for each category of each element creates a HTML button, then returns a div with all buttons.
+    //If given a string of a filter it will create that button with the active class and with the true parameter in the onclick function 
+    filtersCreator(activeButton=""){
+        let catalogFiltersHTML = "";
+        let filtersArray = [];
+        this.catalogProducts.forEach(element =>{
+            element.category.forEach(filter =>{
+                if (!filtersArray.includes(filter) && element.active){
+                    filtersArray.push(filter)
                 }
             })
+        })
+        filtersArray.forEach(filter =>{
+            let button = `
+            <button class="filter-button js-${filter}-button" onclick="catalog.filterButtonFunction('${filter}')">${filter}</button>`
+            if (activeButton === filter){
+                button = `
+                <button class="filter-button js-${filter}-button filter-button-active" onclick="catalog.filterButtonFunction('${filter}', true)">${filter}</button>`
+            }   
+            catalogFiltersHTML += button
+        })
+        this.filtersDiv.innerHTML = catalogFiltersHTML
+    },
+
+    //It creates a shop based on the filter string given. If also given true it deactivate the filter button and restores the default shop
+    filterButtonFunction(filter, active=false){
+        if (!active){
+            this.shopCreator(filter)
+            this.filtersCreator(filter)
         }
-    })
-    filters.forEach(filter =>{
-        let button = `
-        <button class="filter-button js-${filter}-button" onclick="filterButtonFunction('${filter}')">${filter}</button>`
-        html += button
-    })
-    return html
-}
-
-//Data una stringa filtro prende l'array di prodotti e genera le tab solo dei prodotti con quel filtro, poi lo inietta nella pagina
-function filtering(filter, products){
-    let html = ""
-    products.forEach(product =>{
-        if (product.active){
-            if (product.categoria.includes(filter)){
-                let productTab = productHtmlGenerator(product)
-            html += productTab
-            }
+        else{
+            this.shopCreator()
+            this.filtersCreator()
         }
-    })
-    htmlInjector(html, ".js-catalogo-wrapper")
-}
+    },
+    
+    buyButton(productId){
+        const product = this.catalogProducts.find(product => product.id === productId);
+        this.checkoutProductNameDiv.innerHTML = product.name;
+        this.obscuredOverlay.classList.remove("hidden");
+        this.checkoutOverlay.classList.remove("hidden");
+        this.confirmationButtonDiv.innerHTML = `
+            <button class="confirm-buttons" onclick="catalog.confirmationButtonFunction(true, ${product.cost})">Si</button>
+            <button class="confirm-buttons" onclick="catalog.confirmationButtonFunction(false)">No</button>
+        `;
+    },
 
-//Data una stringa filtro prende il bottone con quel filtro nella classe e lo attiva ricreando la pagina dello shop. Disattiva gli altri bottoni
-function filterButtonFunction(filter){
-    let bottone = document.querySelector(`.js-${filter}-button`)
-    if (!bottone.classList.contains("filter-button-active")){
-        htmlInjector(filtersCreator(products), ".js-filters")
-        bottone = document.querySelector(`.js-${filter}-button`)
-        filtering(`${filter}`, products)
-        bottone.classList.add("filter-button-active")
-    }
-    else{
-        htmlInjector(shopCreator(products), ".js-catalogo-wrapper")
-        bottone.classList.remove("filter-button-active")
-    }
-}
 
-//Dato l'id di un prodotto inietta il nome del prodotto nella scheda di checkout e imposta il suo costo
-function buyButton(productId){
-    const popup = document.querySelector(".buy-overlay")
-    const confirmationProduct = document.querySelector(".confirmation-product")
-    const product = objectByUuid(productId)
-    const confirmationButtonsPlace = document.querySelector(".confirm-buttons-wrapper")
-    const obscuredOverlay = document.querySelector(".obscuredOverlay")
-    confirmationProduct.innerHTML = `${product.name}`
-    popup.classList.remove("hidden")
-    obscuredOverlay.classList.remove("hidden")
-    confirmationButtonsPlace.innerHTML = `
-        <button class="confirm-buttons" onclick="confirmationButtonFunction(true, ${product.costo})">Si</button>
-        <button class="confirm-buttons" onclick="confirmationButtonFunction(false)">No</button>
-    `
-}
+    youBroke(cost){
+        if (cost > this.balance){return true}
+    },
 
-function confirmationButtonFunction(youSure, cost){
-    const popup = document.querySelector(".buy-overlay")
-    const thankspopup = document.querySelector(".thanks")
-    const brokepopup = document.querySelector(".broke")
-    const balance = document.querySelector(".balance")
-    const obscuredOverlay = document.querySelector(".obscuredOverlay")
-    popup.classList.add("hidden")
-    if (!youSure){
-        obscuredOverlay.classList.add("hidden")
-        return
-    }
-    if (youBroke(cost)){
-        brokepopup.classList.remove("hidden")
+    confirmationButtonFunction(youSure, cost=0){
+        this.checkoutOverlay.classList.add("hidden");
+        if (!youSure){
+            this.obscuredOverlay.classList.add("hidden")
+            return
+        }
+        if (this.youBroke(cost)){
+            this.brokeOverlay.classList.remove("hidden")
+            setTimeout(()=>{
+                this.brokeOverlay.classList.add("hidden")
+                this.obscuredOverlay.classList.add("hidden")
+            },2000)
+            return
+        }
+        this.thanksOverlay.classList.remove("hidden")
         setTimeout(()=>{
-            brokepopup.classList.add("hidden")
-            obscuredOverlay.classList.add("hidden")
-        },2000)
-        return
-    }
-    thankspopup.classList.remove("hidden")
-    setTimeout(()=>{
-        thankspopup.classList.add("hidden")
-        obscuredOverlay.classList.add("hidden")
-    },1000)
-    balance.innerHTML = Number(balance.innerHTML) - cost
-    localStorage.setItem("balance", `${balance.innerHTML}`)
+            this.thanksOverlay.classList.add("hidden")
+            this.obscuredOverlay.classList.add("hidden")
+        },1000)
+        this.balance -= cost
+        this.balanceDiv.innerHTML = this.balance
+        }
+
 }
 
-function youBroke(cost){
-    if (cost > document.querySelector(".balance").innerHTML){return true}
-}
+class Product {
+    constructor({id, name, cost, description, rarity, repeatable, image, category, active} ){
+        this.id = Number(id);
+        this.name = name;
+        this.cost = Number(cost);
+        this.description = description;
+        this.rarity = rarity;
+        this.repeatable = Boolean(repeatable);
+        this.image = image;
+        this.category = category;
+        this.active = Boolean(active);
 
-
-function balanceSetter(){
-    const balanceDisplay = document.querySelector(".balance")
-    if (localStorage.getItem("balance")){
-        balanceDisplay.innerHTML=Number(localStorage.getItem("balance"))
+        this.productHTML = `
+            <div class="items">
+                <p class="item-photo"> ${this.image}</p>
+                <div class="item-text">
+                    <div class="item-name-rarity">
+                        <p class="item-name">${this.name}</p>
+                    </div>
+                    <p class="item-desc"> ${this.description}</p>
+                </div>
+                <button class="item-price js-${this.id}-price">${this.cost}pt</button>
+                <button class="item-buy js-${this.id}-buy" onclick="catalog.buyButton(${this.id})">Compra</button>
+            </div>`;
     }
-    else {return}
+
 }
