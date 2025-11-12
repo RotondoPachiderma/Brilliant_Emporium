@@ -175,3 +175,10 @@ class Shop {
         this.balanceDiv.innerHTML = this.balance
         }
 }
+
+
+function errorHTML(divClass){
+    document.querySelector(divClass).innerHTML = `
+    <p>ERRORE NEL CARICAMENTO DELLA PAGINA</p>
+    `
+}

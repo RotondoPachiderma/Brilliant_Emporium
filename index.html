@@ -18,10 +18,23 @@
         </div>
         
 
-   <script src="./data.js"></script>
     <script src="./script.js"></script>
     <script>
-        const Emporium = new Shop("Emporium", products, 67, ".shop-wrapper")
+        function loadShop(){
+            Promise.all([
+                fetch("products.url").then(res => {if (!res.ok) {throw new Error("Errore caricamento prodotti")}; return res.json();}),
+                fetch("balance.url").then(res => {if (!res.ok) {throw new Error("Errore caricamento balance")}; return res.json();})
+            ]).then(([products, balance]) =>{
+                throw new Error("Test catch");
+                const Emporium = new Shop("Emporium", products, balance, ".shop-wrapper");
+            }).catch((error) =>{
+                errorHTML(".shop-wrapper");
+                console.log(error);
+            })
+        };
+
+        loadShop()
+
     </script>
 </body>
 </html>
